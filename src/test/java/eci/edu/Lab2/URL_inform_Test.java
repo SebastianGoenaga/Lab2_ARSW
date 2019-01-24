@@ -1,40 +1,38 @@
 package eci.edu.Lab2;
 
 import static org.junit.Assert.*;
-
-import java.io.ByteArrayOutputStream;
-import java.io.PrintStream;
+import java.net.MalformedURLException;
 import java.net.URL;
 
 import org.junit.*;
 
-import eci.edu.Generator.URL_Generator;
-
 public class URL_inform_Test {
 
-	private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
-	private final ByteArrayOutputStream errContent = new ByteArrayOutputStream();
-	private final PrintStream originalOut = System.out;
-	private final PrintStream originalErr = System.err;
 
-	@Before
-	public void setUpStreams() {
-	    System.setOut(new PrintStream(outContent));
-	    System.setErr(new PrintStream(errContent));
-	}
-	
+
 	@Test
-	public void informTest () {
-		URL_inform inform = new URL_inform();
-		inform.inform(URL_Generator.direccion());
-	}
-	
-	
+	public void informTest() throws MalformedURLException {
 
-	@After
-	public void restoreStreams() {
-	    System.setOut(originalOut);
-	    System.setErr(originalErr);
+		String[] URLs = {"http://javi.com:80/gay/books/loca/index.html?name=networking#DOWNLOADING", "", "",
+				"http://andresito.com:80/hola/vargas/web.html?name=networking#SEAECHING",
+				"https://varguis.co:8080/hi/bye/javargas1098/index.html?name=networking#DOWNLOADING"};
+
+		for (String s : URLs) {
+			System.out.println(s);
+			URL_inform inform = new URL_inform(s);
+			URL prueba = new URL(s);
+			assertEquals(inform.getProtocol(), prueba.getProtocol());
+			assertEquals(inform.getAuthority(), prueba.getAuthority());
+			assertEquals(inform.getHost(), prueba.getHost());
+			assertTrue(inform.getPort() == prueba.getPort());
+			assertEquals(inform.getPath(), prueba.getPath());
+			assertEquals(inform.getQuery(), prueba.getQuery());
+			assertEquals(inform.getFilename(), prueba.getFile());
+			assertEquals(inform.getRef(), prueba.getRef());
+			
+		}
+		 
+		
 	}
 
 }

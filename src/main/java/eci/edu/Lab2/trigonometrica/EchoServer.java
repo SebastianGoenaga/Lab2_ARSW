@@ -26,38 +26,26 @@ public class EchoServer {
 		Double result = null;
 		String operando = null;
 		Integer num = null;
+		
+		// Fragmento de codigo realizado por Javier Vargas y Sebastian Goenaga
 		while ((inputLine = in.readLine()) != null) {
 			StringTokenizer stdInTok = new StringTokenizer(inputLine);
-			
+
 			String oper = stdInTok.nextToken();
-			boolean flag;
 
 			try {
-				Integer.parseInt(oper);
-				flag = true;
+				num = Integer.parseInt(oper);
 			} catch (Exception e) {
-				flag = false;
 				num = Integer.parseInt(stdInTok.nextToken());
 				operando = oper;
 			}
 
-			if (flag == true) {
-				if (operando.equals("sin")) {
-					result = Math.sin(Math.toRadians(Integer.parseInt(oper)));
-				} else if (operando.equals("cos")) {
-					result = Math.cos(Math.toRadians(Integer.parseInt(oper)));
-				} else if (operando.equals("tan")) {
-					result = Math.tan(Math.toRadians(Integer.parseInt(oper)));
-				}
-			}
-			else {
-				if (operando.equals("sin")) {
-					result = Math.sin(Math.toRadians(num));
-				} else if (operando.equals("cos")) {
-					result = Math.cos(Math.toRadians(num));
-				} else if (operando.equals("tan")) {
-					result = Math.tan(Math.toRadians(num));
-				}
+			if (operando.equals("sin")) {
+				result = Math.sin(Math.toRadians(num));
+			} else if (operando.equals("cos")) {
+				result = Math.cos(Math.toRadians(num));
+			} else if (operando.equals("tan")) {
+				result = Math.tan(Math.toRadians(num));
 			}
 
 			System.out.println("Mensaje:" + inputLine);

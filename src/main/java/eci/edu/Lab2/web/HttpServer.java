@@ -6,6 +6,7 @@ import java.net.*;
 import java.io.*;
 import java.nio.charset.StandardCharsets;
 
+//Codigo realizado por Javier Vargas y Sebastian Goenaga
 public class HttpServer {
 	public static void main(String[] args) throws IOException {
 		while (true) {

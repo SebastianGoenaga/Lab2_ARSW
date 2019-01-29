@@ -13,9 +13,9 @@ public class URL_inform_Test {
 	@Test
 	public void informTest() throws MalformedURLException {
 
-		String[] URLs = {"http://javi.com:80/gay/books/loca/index.html?name=networking#DOWNLOADING", "", "",
+		String[] URLs = {"http://javi.com:80/hola/books/loca/index.html?name=networking#DOWNLOADING",
 				"http://andresito.com:80/hola/vargas/web.html?name=networking#SEAECHING",
-				"https://varguis.co:8080/hi/bye/javargas1098/index.html?name=networking#DOWNLOADING"};
+				"https://varguis.co:8080/hi/bye/sdsdd/index.html?name=networking#DOWNLOADING"};
 
 		for (String s : URLs) {
 			System.out.println(s);

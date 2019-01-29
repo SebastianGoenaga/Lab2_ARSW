@@ -24,7 +24,7 @@ public class EchoServer {
 		BufferedReader in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
 		String inputLine, outputLine;
 		Double result = null;
-		String operando = null;
+		String operando = "cos";
 		Integer num = null;
 		
 		// Fragmento de codigo realizado por Javier Vargas y Sebastian Goenaga

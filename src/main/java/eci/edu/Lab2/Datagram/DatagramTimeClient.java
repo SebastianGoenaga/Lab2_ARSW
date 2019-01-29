@@ -19,8 +19,6 @@ public class DatagramTimeClient extends Thread{
 		String temp = null;
 		while (true) {
 			
-			byte[] sendBuf = new byte[256];
-			
 			try {
 				DatagramSocket socket = new DatagramSocket();
 				byte[] buf = new byte[256];
@@ -37,7 +35,7 @@ public class DatagramTimeClient extends Thread{
 				System.out.println("Date: " + received);
 			} 
 			catch (SocketTimeoutException e) {
-				System.out.println(temp);
+				System.out.println("The last date registered is: " + temp);
 			}
 			catch (SocketException ex) {
 				Logger.getLogger(DatagramTimeClient.class.getName()).log(Level.SEVERE, null, ex);

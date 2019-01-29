@@ -69,6 +69,11 @@ public class URL_inform {
 			e.printStackTrace();
 		}
 	}
+	
+	public static void main (String[] args) {
+		URL_inform inform = new URL_inform("http://javi.com:80/hola/books/loca/index.html?name=networking#DOWNLOADING");
+		inform.print();
+	}
 
 	/**
 	 * Imprime los parametros dados por una url
@@ -77,13 +82,13 @@ public class URL_inform {
 	 */
 	public void print() {
 
-		System.out.println(protocol);
-		System.out.println(authority);
-		System.out.println(host);
-		System.out.println(port);
-		System.out.println(path);
-		System.out.println(query);
-		System.out.println(filename);
-		System.out.println(ref);
+		System.out.println(getProtocol());
+		System.out.println(getAuthority());
+		System.out.println(getHost());
+		System.out.println(getPort());
+		System.out.println(getPath());
+		System.out.println(getQuery());
+		System.out.println(getFilename());
+		System.out.println(getRef());
 	}
 }

@@ -35,8 +35,8 @@ and then we have a correct server answer:
 
 ### Exercise 6
 This server is capable of receiving multiple requests and return solicited files.
-![foto7](imagenes/img7.png)
+![foto7](imagenes/img8.png)
 
 ### Exercise 7
 I implemented datagrams using threads  in the client, because I want to control the frequency client request to server the date. When the server takes too long send the date, the client prints last date sent.
-![foto8](imagenes/img8.png)
+![foto8](imagenes/img9.png)
